@@ -1,0 +1,8 @@
+[
+  {"id":"1","pId":"0","name":"市卫生计生委","type":"人员列表","page":"https://www.baidu.com"},
+  {"id":"2","pId":"1","name":"办公室","type":"人员列表","page":"page_person_list.action"},
+  {"id":"3","pId":"1","name":"人事科","type":"人员列表","page":"page_person_list2.action"},
+  {"id":"4","pId":"0","name":"市人民医院","type":"人员列表","page":""},
+  {"id":"5","pId":"4","name":"外科","type":"人员列表","page":""},
+  {"id":"6","pId":"2","name":"XXX","type":"详细信息","page":""}
+]

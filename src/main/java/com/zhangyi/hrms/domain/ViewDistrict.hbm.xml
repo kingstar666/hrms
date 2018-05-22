@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.zhangyi.hrms.domain.ViewDistrict" table="view_district" schema="hrms">
+        <id name="districtCode">
+            <column name="district_code" sql-type="varchar(6)" length="6"/>
+        </id>
+        <property name="districtName">
+            <column name="district_name" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="country">
+            <column name="country" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="cityCode">
+            <column name="city_code" sql-type="varchar(6)" length="6" not-null="true"/>
+        </property>
+        <property name="cityName">
+            <column name="city_name" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="provinceCode">
+            <column name="province_code" sql-type="varchar(6)" length="6" not-null="true"/>
+        </property>
+        <property name="provinceName">
+            <column name="province_name" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="province">
+            <column name="province" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="shortName">
+            <column name="short_name" sql-type="varchar(60)" length="60" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

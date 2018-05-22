@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.zhangyi.hrms.domain.ViewPersonList" table="view_person_list" schema="hrms">
+        <id name="personId">
+            <column name="person_id" sql-type="varchar(32)" length="32"/>
+        </id>
+        <property name="personName">
+            <column name="person_name" sql-type="varchar(36)" length="36" not-null="true"/>
+        </property>
+        <property name="birthday">
+            <column name="birthday" sql-type="date" not-null="true"/>
+        </property>
+        <property name="orgId">
+            <column name="org_id" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+        <property name="orgName">
+            <column name="org_name" sql-type="varchar(120)" length="120" not-null="true"/>
+        </property>
+        <property name="deptId">
+            <column name="dept_id" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+        <property name="deptName">
+            <column name="dept_name" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="ethnicity">
+            <column name="ethnicity" sql-type="varchar(15)" length="15" not-null="true"/>
+        </property>
+        <property name="partyName">
+            <column name="party_name" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+        <property name="nativePlace">
+            <column name="native_place" sql-type="varchar(60)" length="60" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.zhangyi.hrms.domain.DicMarriage" table="dic_marriage" schema="hrms">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="itemName">
+            <column name="item_name" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="standardId">
+            <column name="standard_id" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="superId">
+            <column name="super_id" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="sequence">
+            <column name="sequence" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="visible">
+            <column name="visible" sql-type="int(11)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

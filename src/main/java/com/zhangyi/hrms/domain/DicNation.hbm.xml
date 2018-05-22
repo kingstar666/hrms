@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.zhangyi.hrms.domain.DicNation" table="dic_nation" schema="hrms">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="shortnameCn">
+            <column name="shortname_cn" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="shortnameEn">
+            <column name="shortname_en" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="char2Code">
+            <column name="char_2_code" sql-type="varchar(2)" length="2" not-null="true"/>
+        </property>
+        <property name="char3Code">
+            <column name="char_3_code" sql-type="varchar(3)" length="3" not-null="true"/>
+        </property>
+        <property name="numberCode">
+            <column name="number_code" sql-type="varchar(3)" length="3" not-null="true"/>
+        </property>
+        <property name="fullnameCn">
+            <column name="fullname_cn" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="fullnameEn">
+            <column name="fullname_en" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="visible">
+            <column name="visible" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="sequence">
+            <column name="sequence" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="standard">
+            <column name="standard" sql-type="int(11)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

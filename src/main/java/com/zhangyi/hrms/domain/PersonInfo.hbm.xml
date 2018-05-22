@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.zhangyi.hrms.domain.PersonInfo" table="tab_person_info" schema="hrms">
+        <id name="personId">
+            <column name="person_id" sql-type="varchar(32)" length="32"/>
+            <generator class="uuid"/>
+        </id>
+        <property name="personName">
+            <column name="person_name" sql-type="varchar(36)" length="36"/>
+        </property>
+        <property name="foreignName">
+            <column name="foreign_name" sql-type="varchar(36)" length="36"/>
+        </property>
+        <property name="usedName">
+            <column name="used_name" sql-type="varchar(36)" length="36"/>
+        </property>
+        <property name="birthday" type="date">
+            <column name="birthday" />
+        </property>
+        <property name="homeAddress">
+            <column name="home_address" sql-type="varchar(120)" length="120"/>
+        </property>
+        <property name="email">
+            <column name="email" sql-type="varchar(40)" length="40"/>
+        </property>
+        <property name="phone">
+            <column name="phone" sql-type="varchar(11)" length="11"/>
+        </property>
+        <property name="personSequence">
+            <column name="person_sequence" sql-type="int(11)"/>
+        </property>
+        <property name="identityCard">
+            <column name="identity_card" sql-type="varchar(18)" length="18"/>
+        </property>
+        <property name="photo">
+            <column name="photo" sql-type="varchar(255)"/>
+        </property>
+        <property name="deleted">
+            <column name="deleted" sql-type="tinyint(1)"/>
+        </property>
+        <property name="modifyTime">
+            <column name="modify_time" sql-type="timestamp"/>
+        </property>
+        <one-to-one name="tabPersonPoliticalStatusByPersonId" class="com.zhangyi.hrms.domain.PersonPoliticalStatus"/>
+        <many-to-one name="orgInfo" column="org_id" unique="true"/>
+        <many-to-one name="deptInfo" column="dept_id" unique="true"/>
+        <many-to-one name="gender" column="gender_id" unique="true"/>
+        <many-to-one name="nationality" column="nationality" unique="true"/>
+        <many-to-one name="nativePlace" column="native_place_id" unique="true"/>
+        <many-to-one name="birthPlace" column="birth_place_id" unique="true"/>
+        <many-to-one name="domicilePlace" column="domicile_place_id" unique="true"/>
+        <many-to-one name="ethnicity" column="ethnicity_id" unique="true"/>
+        <many-to-one name="health" column="health_id" unique="true"/>
+        <many-to-one name="marriage" column="marriage_id" unique="true"/>
+    </class>
+</hibernate-mapping>

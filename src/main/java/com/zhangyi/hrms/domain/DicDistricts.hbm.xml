@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.zhangyi.hrms.domain.DicDistricts" table="dic_districts" schema="hrms">
+        <id name="districtCode">
+            <column name="district_code" sql-type="varchar(6)" length="6"/>
+        </id>
+        <property name="districtName">
+            <column name="district_name" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="districtLevel">
+            <column name="district_level" sql-type="varchar(1)" length="1" not-null="true"/>
+        </property>
+        <property name="shortName">
+            <column name="short_name" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <many-to-one name="superDistirctCode" column="super_distirct_code" unique="true"/>
+    </class>
+</hibernate-mapping>

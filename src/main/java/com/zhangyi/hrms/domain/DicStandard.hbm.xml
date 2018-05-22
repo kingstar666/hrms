@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.zhangyi.hrms.domain.DicStandard" table="dic_standard" schema="hrms">
+        <id name="standardId">
+            <column name="standard_id" sql-type="int(11)"/>
+        </id>
+        <property name="standardName">
+            <column name="standard_name" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="standardCode">
+            <column name="standard_code" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="standardYear">
+            <column name="standard_year" sql-type="int(4)" not-null="true"/>
+        </property>
+
+    </class>
+</hibernate-mapping>

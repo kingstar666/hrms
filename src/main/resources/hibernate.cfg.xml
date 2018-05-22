@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost:3306/hrms</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <mapping class="com.zhangyi.hrms.domain.User"/>
+        <mapping resource="com/zhangyi/hrms/domain/User.hbm.xml"/>
+        <mapping class="com.zhangyi.hrms.domain.SysUser"/>
+        <mapping resource="com/zhangyi/hrms/domain/SysUser.hbm.xml"/>
+        <mapping resource="com/zhangyi/hrms/domain/DicDistricts.hbm.xml"/>
+        <mapping class="com.zhangyi.hrms.domain.DicDistricts"/>
+        <mapping class="com.zhangyi.hrms.domain.DicEthnicity"/>
+        <mapping resource="com/zhangyi/hrms/domain/DicEthnicity.hbm.xml"/>
+        <mapping class="com.zhangyi.hrms.domain.DicGender"/>
+        <mapping resource="com/zhangyi/hrms/domain/DicGender.hbm.xml"/>
+        <mapping resource="com/zhangyi/hrms/domain/DicHealth.hbm.xml"/>
+        <mapping class="com.zhangyi.hrms.domain.DicHealth"/>
+        <mapping class="com.zhangyi.hrms.domain.DicMarriage"/>
+        <mapping resource="com/zhangyi/hrms/domain/DicMarriage.hbm.xml"/>
+        <mapping class="com.zhangyi.hrms.domain.DicNation"/>
+        <mapping resource="com/zhangyi/hrms/domain/DicNation.hbm.xml"/>
+        <mapping class="com.zhangyi.hrms.domain.DicStandard"/>
+        <mapping resource="com/zhangyi/hrms/domain/DicStandard.hbm.xml"/>
+        <mapping class="com.zhangyi.hrms.domain.DeptInfo"/>
+        <mapping resource="com/zhangyi/hrms/domain/DeptInfo.hbm.xml"/>
+        <mapping resource="com/zhangyi/hrms/domain/OrgInfo.hbm.xml"/>
+        <mapping class="com.zhangyi.hrms.domain.OrgInfo"/>
+        <mapping resource="com/zhangyi/hrms/domain/PersonInfo.hbm.xml"/>
+        <mapping class="com.zhangyi.hrms.domain.PersonInfo"/>
+        <mapping resource="com/zhangyi/hrms/domain/ViewPersonList.hbm.xml"/>
+        <mapping class="com.zhangyi.hrms.domain.ViewPersonList"/>
+        <mapping resource="com/zhangyi/hrms/domain/ViewMainTree.hbm.xml"/>
+        <mapping class="com.zhangyi.hrms.domain.ViewMainTree"/>
+        <mapping resource="com/zhangyi/hrms/domain/PersonPoliticalStatus.hbm.xml"/>
+        <mapping class="com.zhangyi.hrms.domain.PersonPoliticalStatus"/>
+        <mapping resource="com/zhangyi/hrms/domain/ViewDistrict.hbm.xml"/>
+        <mapping class="com.zhangyi.hrms.domain.ViewDistrict"/>
+
+        <!-- <property name="connection.username"/> -->
+        <!-- <property name="connection.password"/> -->
+
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>

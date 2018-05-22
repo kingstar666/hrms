@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.zhangyi.hrms.domain.PersonPoliticalStatus" table="tab_person_political_status" schema="hrms">
+        <id name="personId">
+            <column name="personId" sql-type="varchar(32)" length="32"/>
+        </id>
+        <property name="politicalStatus">
+            <column name="political_status" sql-type="varchar(8)" length="8" not-null="true"/>
+        </property>
+        <property name="prepareDate">
+            <column name="prepare_date" sql-type="date" not-null="true"/>
+        </property>
+        <property name="partyIntroducer">
+            <column name="party_introducer" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+        <property name="formalDate">
+            <column name="formal_date" sql-type="date" not-null="true"/>
+        </property>
+        <property name="abnormalReason">
+            <column name="abnormal_reason" sql-type="varchar(256)" length="256" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

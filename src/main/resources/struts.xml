@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="false" />	
+	<package name="basicstruts2" extends="struts-default">
+		<interceptors>
+			<interceptor name="loginInterceptor" class="com.zhangyi.hrms.web.interceptor.LoginInterceptor">
+				<param name="excludeMethods">login</param>
+			</interceptor>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="loginInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myStack"></default-interceptor-ref>
+		<global-results>
+			<result name="login">/login.jsp</result>
+		</global-results>
+		<!-- 需要进行权限控制的页面访问 -->
+		<action name="page_*_*" class="com.zhangyi.hrms.web.action.PageAction">
+			<result type="dispatcher">/WEB-INF/pages/{1}/{2}.jsp</result>
+		</action>
+		<action name="userAction_*" class="userAction" method="{1}">
+			<result name="home">/index.jsp</result>
+		</action>
+		<action name="personListAction_*" class="personListAction" method="{1}">
+
+		</action>
+		<action name="mainTreeAction_*" class="mainTreeAction" method="{1}">
+
+		</action>
+		<action name="dicGenderAction_*" class="dicGenderAction" method="{1}">
+
+		</action>
+		<action name="dicNationAction_*" class="dicNationAction" method="{1}">
+		</action>
+		<action name="dicEthnicityAction_*" class="dicEthnicityAction" method="{1}">
+		</action>
+		<action name="personAction_*" class="personAction" method="{1}">
+			<result name="detail" type="dispatcher">/WEB-INF/pages/person/detail.jsp</result>
+		</action>
+		<action name="uploadAction" class="com.zhangyi.hrms.web.action.UploadAction">
+			<param name="savePath">/pictures</param>
+			<result name="detail" type="chain">personAction_query</result>
+		</action>
+	</package>
+</struts>

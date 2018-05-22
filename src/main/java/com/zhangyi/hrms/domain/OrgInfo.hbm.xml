@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.zhangyi.hrms.domain.OrgInfo" table="tab_org_info" schema="hrms">
+        <id name="orgId">
+            <column name="org_id" sql-type="varchar(32)" length="32"/>
+        </id>
+        <property name="orgName">
+            <column name="org_name" sql-type="varchar(120)" length="120" not-null="true"/>
+        </property>
+        <property name="orgCode">
+            <column name="org_code" sql-type="varchar(18)" length="18" not-null="true"/>
+        </property>
+        <property name="zipCode">
+            <column name="zip_code" sql-type="varchar(6)" length="6" not-null="true"/>
+        </property>
+        <property name="orgAddress">
+            <column name="org_address" sql-type="varchar(120)" length="120" not-null="true"/>
+        </property>
+        <property name="orgPhone">
+            <column name="org_phone" sql-type="varchar(16)" length="16" not-null="true"/>
+        </property>
+        <property name="belongto">
+            <column name="belongto" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="orgLevel">
+            <column name="org_level" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="superOrg">
+            <column name="super_org" sql-type="varchar(120)" length="120" not-null="true"/>
+        </property>
+        <property name="orgType">
+            <column name="org_type" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="corpType">
+            <column name="corp_type" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="refToCivilServiceLaw">
+            <column name="ref_to_civil_service_law" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="orgSequence">
+            <column name="org_sequence" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="deleted">
+            <column name="deleted" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="modified">
+            <column name="modified" sql-type="timestamp"/>
+        </property>
+    </class>
+</hibernate-mapping>
